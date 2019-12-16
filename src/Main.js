@@ -13,7 +13,18 @@ import Routes from './components/Routes';
 
 class Main extends Component<{}> {
 
-	
+	render() {
+    const {authData:{isLoggedIn}} = this.props;
+		return(
+      <View style={styles.container}>
+        <StatusBar
+           backgroundColor="#1c313a"
+           barStyle="light-content"
+         />
+        <Routes isLoggedIn={isLoggedIn} />
+      </View>
+			)
+	}
 }
 
 const styles = StyleSheet.create({
